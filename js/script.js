@@ -3,26 +3,31 @@
 // Created by: Shanea Jaromay
 // Created on: May 2025
 
+
 // This file contains the JS functions for index.html
 
-"use-strict"
+
+"use strict"
+
 
 /**
 * This function calculate, doing multiplication
 */
 // eslint-disable-next-line no-unused-vars
-function reverseNumber () {
-  //input 
-  let counter = 0;
-  let answer = 0;
-  const numberOne = parseFloat(document.getElementById('number-one').value)
+function reverseNumber() {
+ //input
+let reversed = ''
+let inputNumber = document.getElementById('number-one').value.trim()
 
-  //process
-  if (counter < numberOne ) {
-    counter ++;
-    answer = numberOne;
+
+ //process
+while (inputNumber.length > 0) {
+  let lastDigit = inputNumber.substring(inputNumber.length - 1)
+  reversed = reversed + lastDigit
+  inputNumber = inputNumber.substring(0, inputNumber.length - 1)
   }
 
-  // output
-  document.getElementById('answer').innerHTML = 'Your answer is:' + answer + '.'
+
+ // output
+document.getElementById('answer').innerHTML = 'Your reversed number is:' + reversed + '.'
 }
